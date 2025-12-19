@@ -29,7 +29,7 @@
                 </div>
             </form>
         </div>
-        <div class="tabla">
+        <!-- <div class="tabla">
             <thead>
                 <tr>
                     <td>Titulo</td>
@@ -48,7 +48,7 @@
                     <td>{{ user.m2 }}</td>
                 </tr>
             </tbody>
-        </div>
+        </div> -->
     </div>
 </template>
 
@@ -64,8 +64,6 @@ export default {
             apellido: null,
             m1: null,
             m2: null,
-            user: [],
-            users: [],
         }
     },
     methods: {
@@ -81,14 +79,7 @@ export default {
             console.log("titulo" + this.titulo)
         },
         agregarUser() {
-            // this.$emit('agregar-user', {
-            //     titulo: this.titulo,
-            //     nombre: this.nombre,
-            //     apellido: this.apellido,
-            //     m1: this.m1,
-            //     m2: this.m2,
-            // });
-            this.users.push({
+            this.$emit('agregar-user', {
                 titulo: this.titulo,
                 nombre: this.nombre,
                 apellido: this.apellido,
@@ -108,5 +99,22 @@ export default {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.centrar-botones {
+    margin-top: 10px;
+    padding: 10px;
+}
+
+button {
+    margin-right: 10px;
+}
+
+label {
+    display: flex;
+    text-align: left;
+    justify-content: left;
+    justify-items: flex-start;
+    height: 100%;
 }
 </style>
